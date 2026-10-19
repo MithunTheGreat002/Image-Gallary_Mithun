@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Creative Gallery</h1>
+        
+        <div class="filter-buttons" id="filterButtons">
+            <button class="active" data-filter="All">All</button>
+            <button data-filter="Nature">Nature</button>
+            <button data-filter="Architecture">Architecture</button>
+            <button data-filter="Technology">Technology</button>
+            <button data-filter="Device Photos">Device Photos</button>
+        </div>
+
+        <div class="upload-container">
+            <label for="fileUpload" class="upload-btn">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                    <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
+                </svg>
+                Upload Device Photos
+            </label>
+            <input type="file" id="fileUpload" multiple accept="image/*" style="display: none;">
+        </div>
+    </header>
+
+    <main>
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Images will be dynamically inserted here -->
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div class="modal" id="lightboxModal">
+        <span class="close-btn" id="closeBtn">&times;</span>
+        <div class="modal-content">
+            <img src="" alt="Full size image" id="modalImg">
+            <div class="caption-container">
+                <p id="modalCaption"></p>
+                <span id="modalCounter"></span>
+            </div>
+            <button class="nav-btn prev-btn" id="prevBtn">&#10094;</button>
+            <button class="nav-btn next-btn" id="nextBtn">&#10095;</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
